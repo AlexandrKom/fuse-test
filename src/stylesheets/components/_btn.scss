@@ -1,0 +1,103 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+
+  //btn-form-callback
+  &__form-callback {
+    position: relative;
+    color: #03c1de;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 107px;
+    letter-spacing: 0.2px;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      margin: 0 auto;
+      width: 0%;
+      margin-bottom: 11px;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-bottom-color: #03c1de;
+    }
+    &:hover::after {
+      width: 92%;
+      margin-bottom: 11px;
+      transition: all 2s;
+    }
+    &:active {
+      color: #1e8190;
+    }
+    &:active::after {
+      border-bottom-color: #1e8190;
+    }
+  }
+
+  // btn-menu-togle
+  &__menu-toogle {
+    display: none;
+    position: absolute;
+    right: 20px;
+    bottom: -50px;
+    width: 23px;
+    height: 22px;
+    font-size: 0;
+    z-index: 1;
+
+    &--close{
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 9px;
+        width: 23px;
+        height: 3px;
+        z-index: 1;
+        box-shadow: 0 8px white,0 -8px white;
+        background-color: white;
+      }
+    }
+    &--open {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        right: 0;
+        width: 23px;
+        height: 4px;
+        transform: rotate(45deg);
+        box-shadow: none;
+        background-color: #fff;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 9px;
+        right: 0px;
+        display: block;
+        width: 23px;
+        height: 4px;
+        background-color: #fff;
+        transform: rotate(-45deg);
+      }
+    }
+
+  }
+}
+
+//********* transition to a tablet-max 750px
+@media #{$desktop} {
+  .btn {
+    &__menu-toogle {
+      display: block;
+
+    }
+  }
+}

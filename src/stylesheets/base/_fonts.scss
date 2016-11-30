@@ -1,0 +1,32 @@
+/*
+// This file contains all @font-face declarations, if any.
+*****************************************/
+
+@font-face {
+  font-family: 'HKGrotesk';
+  src: url("../fonts/hkgrotesk-light.woff") format("woff"),
+       url("../fonts/hkgrotesk-light.woff2") format("woff2");
+  font-style: light;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'HKGrotesk';
+  src: url("../fonts/hkgrotesk-regular.woff") format("woff"),
+       url("../fonts/hkgrotesk-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'HKGrotesk';
+  src: url("../fonts/hkgrotesk-medium.woff") format("woff"),
+       url("../fonts/hkgrotesk-medium.woff2") format("woff2");
+  font-style: medium;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'HKGrotesk';
+  src: url("../fonts/hkgrotesk-bold.woff") format("woff"),
+       url("../fonts/hkgrotesk-bold.woff2") format("woff2");
+  font-style: bold;
+  font-weight: 800;
+}

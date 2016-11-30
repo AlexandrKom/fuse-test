@@ -1,0 +1,233 @@
+/* main-menu block
+******************************************/
+
+.form-callback {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 745px;
+  width: 65%;
+  height: 100%;
+  overflow: hidden;
+  background: #222629 url(img/pattern.png) repeat;
+
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -335px;
+    content: '';
+    width: 335px;
+    height: 100%;
+    background: white;
+    transform-origin: top left;
+    transform: skewX(20deg);
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 560px;
+    margin-left: 180px;
+    color: white;
+  }
+
+  &__title {
+    @include calc-fs(24);
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin-left: 3px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &__conteiner {
+    padding: 0;
+    border: none;
+  }
+
+  &__line-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 13px;
+  }
+
+  input[type="text"]::-webkit-input-placeholder  { color: $form-element_color; };
+  input[type="text"]::-moz-placeholder           { color: $form-element_color; };
+  input[type="email"]::-webkit-input-placeholder { color: $form-element_color; };
+  input[type="email"]::-moz-placeholder          { color: $form-element_color; };
+  input[type="phone"]::-webkit-input-placeholder { color: $form-element_color; };
+  input[type="phone"]::-moz-placeholder          { color: $form-element_color; };
+
+  &__inp-wrapper {
+    position: relative;
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__inp {
+    width: 222px;
+    height: 31px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: none;
+    line-height: 28px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      background: rgba(39, 44, 46, 0.66);
+      border-radius: 5px 5px 0 0;
+      border-bottom: 1px solid #03c1de;
+    }
+    &:focus + .form-callback__inp-label{
+      display: none;
+    }
+  }
+
+  &__inp-label {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-right: 20px;
+    line-height: 34px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &__inp-label--required-char {
+    color: #03c1de;
+    font-weight: 600;
+  }
+
+  &__inp--lastname {
+    width: 290px;
+  }
+
+  &__inp--phone {
+    width: 272px;
+  }
+
+  .form-callback__line-wrapper--contacts {
+    margin-bottom: 28px;
+  }
+  .form-callback__conteiner--reason {
+    margin-bottom: 10px;
+  }
+
+  &__select {
+    position: relative;
+    width: 499px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    opacity: 0.8;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url(img/select-arrow.png);
+    background-position: right 4px;
+    background-repeat: no-repeat;
+
+    &:focus {
+      outline: none;
+    }
+
+    & option {
+      background: #222629;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &__conteiner--message {
+    margin-bottom: 30px;
+    margin-left: 83px;
+  }
+
+  &__conteiner--message-title {
+    width: 200px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &__txtarea {
+    width: 473px;
+    height: 55px;
+    margin: 0px;
+    border: 0px;
+    overflow: hidden;
+    outline: none;
+    background: none;
+    color: rgba(255, 255, 255, 0.8);
+    resize: none;
+    border-bottom: 1px solid white;
+    &:focus {
+      border-bottom: 1px solid #03c1de;
+    }
+  }
+
+}
+
+
+//********* transition to a tablet-max 750px
+@media #{$desktop} {
+  .form-callback {
+    width: 100%;
+    min-width: 550px;
+    justify-content: center;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 100px;
+      background: white;
+      transform-origin: top left;
+      transform: skewX(94deg);
+    }
+
+    &__wrapper {
+      margin-left: 0;
+    }
+  }
+}
+
+//********* transition to a tablet 550px
+@media #{$tablet} {
+  .form-callback {
+    min-width: auto;
+
+    &__wrapper {
+      width: 90%;
+      margin: 0 5%;
+    }
+    &__line-wrapper {
+      flex-direction: column;
+    }
+    &__conteiner {
+      width: 80%;
+    }
+    &__inp-wrapper:first-child {
+      margin-right: 0
+    }
+    &__conteiner--message {
+      margin-left: 0;
+    }
+    &__inp-wrapper {
+
+    }
+    &__inp,
+    &__select,
+    &__txtarea{
+      width: 100%;
+    }
+  }
+}

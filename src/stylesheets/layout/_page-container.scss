@@ -1,0 +1,24 @@
+/* page-container layout
+*******************************/
+
+.page-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+
+//********* transition to a tablet-max 750px
+@media #{$desktop} {
+  .page-container {
+    flex-direction: column;
+  }
+}
