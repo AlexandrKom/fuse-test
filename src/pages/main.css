@@ -766,6 +766,32 @@ body {
   .form-callback__inp-label--required-char {
     color: #03c1de;
     font-weight: 600; }
+  .form-callback__inp-message {
+    position: absolute;
+    top: -300%;
+    left: 0;
+    width: 100%;
+    height: 93px;
+    background: #ffffff;
+    border: 2px solid #f0f2f3; }
+    .form-callback__inp-message::before {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 9px;
+      background: #ff4f00; }
+    .form-callback__inp-message::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid #ff4f00; }
   .form-callback__inp--lastname {
     width: 290px; }
   .form-callback__inp--phone {

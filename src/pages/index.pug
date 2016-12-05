@@ -4,38 +4,38 @@ html(lang="en")
     //this is head
     include ../blocks/_head.pug
 
-body
+  body
 
-  main.page-container(role='main')
+    main.page-container
 
-    //this is menu
-    include ../blocks/menu/_main-menu.pug
+      //this is menu
+      include ../blocks/menu/_main-menu.pug
 
-    //this is form
-    include ../blocks/form-callback/_form-callback.pug
+      //this is form
+      include ../blocks/form-callback/_form-callback.pug
 
 
 
-script.
-  "use strict";
-  var navMain = document.querySelector('.main-menu');
-  var navToggle = document.querySelector('.btn__menu-toogle');
-  navMain.classList.remove('main-menu--nojs');
-  navMain.classList.remove('main-menu--opened');
-  navMain.classList.add('main-menu--closed');
-  navToggle.classList.remove('btn__menu-toogle--open');
-  navToggle.classList.add('btn__menu-toogle--close')
-  navToggle.addEventListener('click', function() {
-    if (navMain.classList.contains('main-menu--closed')) {
-      navMain.classList.remove('main-menu--closed');
-      navMain.classList.add('main-menu--opened');
-      navToggle.classList.remove('btn__menu-toogle--close');
-      navToggle.classList.add('btn__menu-toogle--open');
-    }
-    else {
-      navMain.classList.add('main-menu--closed');
+    script.
+      "use strict";
+      var navMain = document.querySelector('.main-menu');
+      var navToggle = document.querySelector('.btn__menu-toogle');
+      navMain.classList.remove('main-menu--nojs');
       navMain.classList.remove('main-menu--opened');
+      navMain.classList.add('main-menu--closed');
       navToggle.classList.remove('btn__menu-toogle--open');
-      navToggle.classList.add('btn__menu-toogle--close');
-   }
-  });
+      navToggle.classList.add('btn__menu-toogle--close')
+      navToggle.addEventListener('click', function() {
+        if (navMain.classList.contains('main-menu--closed')) {
+          navMain.classList.remove('main-menu--closed');
+          navMain.classList.add('main-menu--opened');
+          navToggle.classList.remove('btn__menu-toogle--close');
+          navToggle.classList.add('btn__menu-toogle--open');
+        }
+        else {
+          navMain.classList.add('main-menu--closed');
+          navMain.classList.remove('main-menu--opened');
+          navToggle.classList.remove('btn__menu-toogle--open');
+          navToggle.classList.add('btn__menu-toogle--close');
+       }
+      });
