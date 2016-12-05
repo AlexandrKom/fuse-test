@@ -770,6 +770,7 @@ body {
     position: absolute;
     top: -300%;
     left: 0;
+    display: none;
     width: 100%;
     height: 93px;
     background: #ffffff;
